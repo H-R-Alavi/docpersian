@@ -359,6 +359,7 @@
 
         .v-logo-box {
             text-align: right;
+            padding-right: 28px;
         }
 
         .v-logo-img {
@@ -424,16 +425,16 @@
             padding: 10px 12px;
             text-align: right;
             vertical-align: top !important;
-            width: 86%;
+            width: 91%;
         }
 
-        /* The 3 Left Vertical Approval Boxes - VERTICAL TEXT */
+        /* The 3 Left Vertical Approval Boxes - VERTICAL TEXT (Narrower width with vertical breathing room) */
         .v-role-box-cell {
-            width: 14%;
+            width: 9%;
             text-align: center;
             vertical-align: middle !important;
             background: #ffffff;
-            padding: 8px 2px;
+            padding: 14px 2px;
         }
 
         .v-role-vertical-text {
@@ -550,11 +551,75 @@
         .v-bottom-signatures-row td {
             width: 33.333%;
             text-align: center;
-            padding: 10px 4px 45px 4px;
+            vertical-align: top !important;
+            padding: 10px 4px 36px 4px;
             font-weight: 800;
             font-size: 12.5px;
             background: #ffffff;
             border-top: 2px solid #000;
+        }
+
+        .v-requester-subname {
+            margin-top: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #0f172a;
+            min-height: 18px;
+        }
+
+        .checkbox-inline-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            padding: 7px 10px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .checkbox-inline-row input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+            cursor: pointer;
+            margin: 0;
+        }
+
+        .checkbox-inline-row span {
+            font-size: 0.83rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .modal-actions-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .modal-btn-danger {
+            flex: 1;
+            background: #dc2626;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .modal-btn-cancel {
+            flex: 1;
+            background: #e2e8f0;
+            color: #1e293b;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
         }
 
         /* Hidden Export Canvas */
@@ -685,8 +750,8 @@
                 <input type="text" id="purpose" placeholder="مثال: خرید یراق‌آلات درب و پنجره دوجداره">
             </div>
             <div class="form-group">
-                <label for="recipient">به نام آقای / شرکت:</label>
-                <input type="text" id="recipient" placeholder="نام و نام خانوادگی دریافت‌کننده">
+                <label for="recipient">برای آقای / شرکت:</label>
+                <input type="text" id="recipient" placeholder="نام شخص یا شرکتی که پرداخت برای اوست">
             </div>
             <div class="form-group">
                 <label for="account">شماره حساب / کارت / شبا (فقط عدد وارد کنید):</label>
@@ -697,9 +762,21 @@
                 </div>
             </div>
             <div class="form-group">
+                <label for="accountHolder">نام صاحب حساب:</label>
+                <label class="checkbox-inline-row" for="sameAsRecipient">
+                    <input type="checkbox" id="sameAsRecipient">
+                    <span>حساب به نام همین شخص بالا (برای آقای) می‌باشد</span>
+                </label>
+                <input type="text" id="accountHolder" placeholder="نام و نام خانوادگی صاحب حساب یا کارت">
+            </div>
+            <div class="form-group">
                 <label for="amount">مبلغ پرداختی (ریال):</label>
                 <input type="text" id="amount" inputmode="numeric" dir="ltr" autocomplete="off" placeholder="مثال: 50,000,000">
                 <div class="amount-in-words-box" id="amountWords">حروف: صفر ریال</div>
+            </div>
+            <div class="form-group" style="margin-bottom: 4px;">
+                <label for="requesterName">نام درخواست کننده:</label>
+                <input type="text" id="requesterName" placeholder="نام و نام خانوادگی ثبت‌کننده درخواست">
             </div>
         </div>
 
@@ -758,7 +835,7 @@
                     <!-- Row 1: Payment Request & Requester Box -->
                     <tr>
                         <td class="v-content-cell">
-                            <div class="v-intro-title">مدیریت محترم داخلی شرکت پرشین صنعت</div>
+                            <div class="v-intro-title">مدیریت محترم داخلی شرکت پرشین</div>
                             <div class="v-intro-desc">احتراما در صورت تایید فاکتورهای پیوست شده، مبلغ زیر را به شماره حساب داده شده واریز فرمایید .</div>
                             <table class="v-fields-table">
                                 <tr>
@@ -766,12 +843,12 @@
                                     <td class="v-value-cell" id="pvPurpose">-</td>
                                 </tr>
                                 <tr>
-                                    <td class="v-label-cell">به نام آقای</td>
+                                    <td class="v-label-cell">برای آقای</td>
                                     <td class="v-value-cell" id="pvRecipient">-</td>
                                 </tr>
                                 <tr>
                                     <td class="v-label-cell">شماره حساب / کارت/ شبا</td>
-                                    <td class="v-value-cell" id="pvAccount" dir="ltr" style="text-align: right; font-family: monospace, Tahoma, sans-serif; font-size: 13px; letter-spacing: 0.5px;">-</td>
+                                    <td class="v-value-cell" id="pvAccount">-</td>
                                 </tr>
                                 <tr>
                                     <td class="v-label-cell">مبلغ</td>
@@ -842,7 +919,10 @@
 
                     <!-- Row 4: Bottom 3 Equal Signature Cells -->
                     <tr class="v-bottom-signatures-row">
-                        <td>درخواست کننده</td>
+                        <td>
+                            <div>درخواست کننده</div>
+                            <div class="v-requester-subname" id="pvRequesterName"></div>
+                        </td>
                         <td>حسابداری</td>
                         <td>امضاء مدیر داخلی</td>
                     </tr>
@@ -874,6 +954,18 @@
         </div>
 
         <button type="button" class="modal-close-btn" id="btnCloseModal">متوجه شدم</button>
+    </div>
+</div>
+
+<!-- Modal: Confirm Reset / New Document -->
+<div class="modal-overlay" id="resetModal">
+    <div class="modal-card">
+        <h3>📄 ایجاد سند جدید</h3>
+        <p style="font-size: 0.9rem; color: #475569; line-height: 1.6;">آیا مایل به پاک کردن فرم فعلی و ثبت یک سند جدید هستید؟</p>
+        <div class="modal-actions-row">
+            <button type="button" class="modal-btn-danger" id="btnConfirmReset">بله، پاک شود</button>
+            <button type="button" class="modal-btn-cancel" id="btnCancelReset">انصراف</button>
+        </div>
     </div>
 </div>
 
@@ -1024,17 +1116,35 @@
         const purpose = document.getElementById('purpose');
         const recipient = document.getElementById('recipient');
         const account = document.getElementById('account');
+        const sameAsRecipient = document.getElementById('sameAsRecipient');
+        const accountHolder = document.getElementById('accountHolder');
         const accountStatusBadge = document.getElementById('accountStatusBadge');
         const accountTypeLabel = document.getElementById('accountTypeLabel');
         const accountDigitCount = document.getElementById('accountDigitCount');
         const amount = document.getElementById('amount');
         const amountWords = document.getElementById('amountWords');
+        const requesterName = document.getElementById('requesterName');
 
         let lastAccountDigits = '';
         let lastAmountDigits = '';
 
         // Initialize Default Date
         docDate.value = getTodayJalali();
+
+        function syncAccountHolderState() {
+            if (sameAsRecipient.checked) {
+                accountHolder.value = recipient.value;
+                accountHolder.disabled = true;
+            } else {
+                accountHolder.disabled = false;
+            }
+        }
+
+        sameAsRecipient.addEventListener('change', () => {
+            syncAccountHolderState();
+            updatePreview();
+            saveToLocalStorage();
+        });
 
         function updateAccountStatusUI(type, len) {
             accountStatusBadge.className = 'field-status-badge';
@@ -1146,12 +1256,22 @@
         });
 
         // Other Inputs Event Listeners
-        [docDate, purpose, recipient].forEach(input => {
+        [docDate, purpose, recipient, accountHolder, requesterName].forEach(input => {
             input.addEventListener('input', () => {
+                if (input === recipient && sameAsRecipient.checked) {
+                    accountHolder.value = recipient.value;
+                }
                 updatePreview();
                 saveToLocalStorage();
             });
         });
+
+        function getEffectiveAccountHolder() {
+            if (sameAsRecipient.checked) {
+                return (recipient.value || '').trim();
+            }
+            return (accountHolder.value || '').trim();
+        }
 
         // Update Live Preview
         function updatePreview() {
@@ -1160,7 +1280,35 @@
             document.getElementById('pvRecipient').innerText = recipient.value || '-';
             
             const accRes = formatAccountString(account.value);
-            document.getElementById('pvAccount').innerText = accRes.formatted || '-';
+            const holderName = getEffectiveAccountHolder();
+            const pvAccountEl = document.getElementById('pvAccount');
+            pvAccountEl.innerHTML = '';
+
+            if (accRes.formatted && holderName) {
+                const wrap = document.createElement('div');
+                wrap.style.cssText = 'display: flex; direction: rtl; justify-content: flex-start; align-items: center; gap: 6px; flex-wrap: wrap;';
+                const numSpan = document.createElement('span');
+                numSpan.dir = 'ltr';
+                numSpan.style.cssText = 'font-family: monospace, Tahoma, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.5px;';
+                numSpan.textContent = accRes.formatted;
+                const holderSpan = document.createElement('span');
+                holderSpan.dir = 'rtl';
+                holderSpan.style.cssText = 'font-family: Tahoma, sans-serif; font-size: 12px; font-weight: 700;';
+                holderSpan.textContent = '- به نام ' + holderName;
+                wrap.appendChild(numSpan);
+                wrap.appendChild(holderSpan);
+                pvAccountEl.appendChild(wrap);
+            } else if (accRes.formatted) {
+                const numSpan = document.createElement('span');
+                numSpan.dir = 'ltr';
+                numSpan.style.cssText = 'display: inline-block; font-family: monospace, Tahoma, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.5px;';
+                numSpan.textContent = accRes.formatted;
+                pvAccountEl.appendChild(numSpan);
+            } else if (holderName) {
+                pvAccountEl.textContent = 'به نام ' + holderName;
+            } else {
+                pvAccountEl.textContent = '-';
+            }
             
             const rawAmt = extractDigits(amount.value).replace(/^0+/, '');
             if (rawAmt) {
@@ -1170,23 +1318,30 @@
             } else {
                 document.getElementById('pvAmount').innerText = '-';
             }
+
+            document.getElementById('pvRequesterName').innerText = (requesterName.value || '').trim();
         }
 
         // Save Draft to LocalStorage
         function saveToLocalStorage() {
-            const data = {
-                docDate: docDate.value,
-                purpose: purpose.value,
-                recipient: recipient.value,
-                account: extractDigits(account.value),
-                amount: extractDigits(amount.value)
-            };
-            localStorage.setItem('persian_voucher_draft_v3', JSON.stringify(data));
+            try {
+                const data = {
+                    docDate: docDate.value,
+                    purpose: purpose.value,
+                    recipient: recipient.value,
+                    account: extractDigits(account.value),
+                    sameAsRecipient: sameAsRecipient.checked,
+                    accountHolder: accountHolder.value,
+                    amount: extractDigits(amount.value),
+                    requesterName: requesterName.value
+                };
+                localStorage.setItem('persian_voucher_draft_v4', JSON.stringify(data));
+            } catch (e) {}
         }
 
         // Restore Draft if exists
         try {
-            const saved = localStorage.getItem('persian_voucher_draft_v3');
+            const saved = localStorage.getItem('persian_voucher_draft_v4') || localStorage.getItem('persian_voucher_draft_v3');
             if (saved) {
                 const data = JSON.parse(saved);
                 if (data.purpose) purpose.value = data.purpose;
@@ -1197,6 +1352,13 @@
                     lastAccountDigits = accRes.digits;
                     updateAccountStatusUI(accRes.type, accRes.digits.length);
                 }
+                if (typeof data.sameAsRecipient === 'boolean') {
+                    sameAsRecipient.checked = data.sameAsRecipient;
+                }
+                if (data.accountHolder) {
+                    accountHolder.value = data.accountHolder;
+                }
+                syncAccountHolderState();
                 if (data.amount) {
                     const rawAmt = extractDigits(data.amount).replace(/^0+/, '');
                     if (rawAmt) {
@@ -1204,6 +1366,9 @@
                         lastAmountDigits = rawAmt;
                         amountWords.innerText = 'حروف: ' + numToPersianWords(rawAmt) + ' ریال';
                     }
+                }
+                if (data.requesterName) {
+                    requesterName.value = data.requesterName;
                 }
             }
         } catch(e) {}
@@ -1240,11 +1405,11 @@
             ctx.textAlign = 'right';
 
             // 2. Header
-            // Top Right: Logo
+            // Top Right: Logo (Moved slightly left per user feedback)
             if (logoImg.complete && logoImg.naturalWidth > 0) {
                 const logoW = 100;
                 const logoH = 130;
-                ctx.drawImage(logoImg, W - 60 - logoW, 25, logoW, logoH);
+                ctx.drawImage(logoImg, W - 115 - logoW, 25, logoW, logoH);
             }
 
             // Top Center: Titles
@@ -1273,9 +1438,9 @@
             ctx.strokeStyle = '#000000';
             ctx.strokeRect(fX, fY, fW, fH);
 
-            // Vertical divider for the Left Role Boxes:
-            const roleColW = 175;
-            const roleDividerX = fX + roleColW; // 235
+            // Vertical divider for the Left Role Boxes (Narrower width: 112px instead of 175px):
+            const roleColW = 112;
+            const roleDividerX = fX + roleColW; // 172
             
             // Draw vertical line separating content from role column
             ctx.beginPath();
@@ -1315,12 +1480,12 @@
             const contentRightX = fX + fW - 20;
 
             ctx.font = 'bold 20px Tahoma, "Segoe UI", sans-serif';
-            ctx.fillText('مدیریت محترم داخلی شرکت پرشین صنعت', contentRightX, fY + 36);
+            ctx.fillText('مدیریت محترم داخلی شرکت پرشین', contentRightX, fY + 36);
 
             ctx.font = '17px Tahoma, "Segoe UI", sans-serif';
             ctx.fillText('احتراما در صورت تایید فاکتورهای پیوست شده، مبلغ زیر را به شماره حساب داده شده واریز فرمایید .', contentRightX, fY + 70);
 
-            // Sub-Table (4 rows: بابت, به نام آقای, شماره حساب, مبلغ)
+            // Sub-Table (4 rows: بابت, برای آقای, شماره حساب, مبلغ)
             const tX = roleDividerX + 15;
             const tY = fY + 95;
             const tW = fX + fW - tX - 15;
@@ -1331,11 +1496,12 @@
             ctx.lineWidth = 1.5;
             ctx.strokeRect(tX, tY, tW, tRowH * 4);
 
-            const labels = ['بابت', 'به نام آقای', 'شماره حساب / کارت/ شبا', 'مبلغ'];
+            const labels = ['بابت', 'برای آقای', 'شماره حساب / کارت/ شبا', 'مبلغ'];
             
             const rawAmt = extractDigits(amount.value).replace(/^0+/, '');
             const amtDisplay = rawAmt ? (toPersianDigits(formatDigitsWithCommas(rawAmt)) + ' ریال (' + numToPersianWords(rawAmt) + ' ریال)') : '-';
-            const accFormatted = formatAccountString(account.value).formatted || '-';
+            const accFormatted = formatAccountString(account.value).formatted || '';
+            const holderName = getEffectiveAccountHolder();
             const vals = [
                 purpose.value || '-',
                 recipient.value || '-',
@@ -1371,13 +1537,37 @@
 
                 // Value text
                 if (i === 2) {
-                    // Draw Card / Sheba / Account in crisp LTR layout aligned to right side of cell
-                    ctx.save();
-                    ctx.direction = 'ltr';
-                    ctx.textAlign = 'right';
-                    ctx.font = 'bold 18px "Courier New", Consolas, Tahoma, sans-serif';
-                    ctx.fillText(vals[i], labelLeft - 15, rowTop + 30);
-                    ctx.restore();
+                    // Draw Card / Sheba / Account in crisp LTR layout on the right, and "- به نام [صاحب حساب]" to its left
+                    const rightStartX = labelLeft - 15;
+                    if (accFormatted && holderName) {
+                        ctx.save();
+                        ctx.direction = 'ltr';
+                        ctx.textAlign = 'right';
+                        ctx.font = 'bold 18px "Courier New", Consolas, Tahoma, sans-serif';
+                        ctx.fillText(accFormatted, rightStartX, rowTop + 30);
+                        const accWidth = ctx.measureText(accFormatted).width;
+                        ctx.restore();
+
+                        ctx.save();
+                        ctx.direction = 'rtl';
+                        ctx.textAlign = 'right';
+                        ctx.font = 'bold 16px Tahoma, "Segoe UI", sans-serif';
+                        ctx.fillText('- به نام ' + holderName, rightStartX - accWidth - 12, rowTop + 30);
+                        ctx.restore();
+                    } else if (accFormatted) {
+                        ctx.save();
+                        ctx.direction = 'ltr';
+                        ctx.textAlign = 'right';
+                        ctx.font = 'bold 18px "Courier New", Consolas, Tahoma, sans-serif';
+                        ctx.fillText(accFormatted, rightStartX, rowTop + 30);
+                        ctx.restore();
+                    } else if (holderName) {
+                        ctx.font = 'bold 16px Tahoma, "Segoe UI", sans-serif';
+                        ctx.fillText('به نام ' + holderName, rightStartX, rowTop + 30);
+                    } else {
+                        ctx.font = '17px Tahoma, "Segoe UI", sans-serif';
+                        ctx.fillText('-', rightStartX, rowTop + 30);
+                    }
                 } else {
                     ctx.font = '17px Tahoma, "Segoe UI", sans-serif';
                     ctx.fillText(vals[i], labelLeft - 15, rowTop + 30);
@@ -1390,39 +1580,62 @@
             // -------------------------------------------------------------
             // SECTION 2: FINANCIAL UNIT (BLANK CHECKBOXES & LINES)
             // -------------------------------------------------------------
+            ctx.direction = 'rtl';
             ctx.textAlign = 'right';
             ctx.font = 'bold 18px Tahoma, "Segoe UI", sans-serif';
-            ctx.fillText('واحد محترم مالی', contentRightX, y1 + 42);
+            const finTitle = 'واحد محترم مالی';
+            ctx.fillText(finTitle, contentRightX, y1 + 42);
+            const finTitleW = ctx.measureText(finTitle).width;
 
             ctx.font = '18px Tahoma, "Segoe UI", sans-serif';
-            ctx.fillText('پرداخت گردد', contentRightX - 160, y1 + 42);
-            drawCheckbox(ctx, contentRightX - 290, y1 + 25, 20, false);
+            const payYesText = 'پرداخت گردد';
+            const payYesX = contentRightX - finTitleW - 28;
+            ctx.fillText(payYesText, payYesX, y1 + 42);
+            const payYesW = ctx.measureText(payYesText).width;
 
-            ctx.fillText('نگردد', contentRightX - 340, y1 + 42);
-            drawCheckbox(ctx, contentRightX - 410, y1 + 25, 20, false);
+            const cbFin1X = payYesX - payYesW - 32;
+            drawCheckbox(ctx, cbFin1X, y1 + 23, 20, false);
+
+            const payNoText = 'نگردد';
+            const payNoX = cbFin1X - 28;
+            ctx.fillText(payNoText, payNoX, y1 + 42);
+            const payNoW = ctx.measureText(payNoText).width;
+
+            const cbFin2X = payNoX - payNoW - 32;
+            drawCheckbox(ctx, cbFin2X, y1 + 23, 20, false);
 
             ctx.font = 'bold 18px Tahoma, "Segoe UI", sans-serif';
             ctx.fillText('توضیحات :', contentRightX, y1 + 90);
             ctx.font = '17px Tahoma, "Segoe UI", sans-serif';
-            ctx.fillText('............................................................................................................................', contentRightX - 90, y1 + 90);
+            ctx.fillText('..........................................................................................................................................', contentRightX - 95, y1 + 90);
 
             // Left Box 2: مدیر داخلی (VERTICAL TEXT, NO "محل امضاء")
             drawVerticalText(ctx, 'مدیر داخلی', fX + roleColW / 2, y1 + row2H / 2);
 
             // -------------------------------------------------------------
-            // SECTION 3: INVOICES & ACCOUNTING (BLANK CHECKBOXES & LINES)
+            // SECTION 3: INVOICES & ACCOUNTING (BLANK CHECKBOXES & LINES - ZERO OVERLAP)
             // -------------------------------------------------------------
+            ctx.direction = 'rtl';
             ctx.textAlign = 'right';
             ctx.font = 'bold 18px Tahoma, "Segoe UI", sans-serif';
-            ctx.fillText('مبلغ فوق با فاکتورها مطابقت دارد', contentRightX, y2 + 40);
-            drawCheckbox(ctx, contentRightX - 280, y2 + 23, 20, false);
+            const matchYesText = 'مبلغ فوق با فاکتورها مطابقت دارد';
+            ctx.fillText(matchYesText, contentRightX, y2 + 40);
+            const matchYesW = ctx.measureText(matchYesText).width;
 
-            ctx.fillText('ندارد', contentRightX - 330, y2 + 40);
-            drawCheckbox(ctx, contentRightX - 390, y2 + 23, 20, false);
+            const cbAcc1X = contentRightX - matchYesW - 34;
+            drawCheckbox(ctx, cbAcc1X, y2 + 21, 20, false);
+
+            const matchNoText = 'ندارد';
+            const matchNoX = cbAcc1X - 32;
+            ctx.fillText(matchNoText, matchNoX, y2 + 40);
+            const matchNoW = ctx.measureText(matchNoText).width;
+
+            const cbAcc2X = matchNoX - matchNoW - 34;
+            drawCheckbox(ctx, cbAcc2X, y2 + 21, 20, false);
 
             ctx.fillText('توضیحات :', contentRightX, y2 + 82);
             ctx.font = '17px Tahoma, "Segoe UI", sans-serif';
-            ctx.fillText('............................................................................................................................', contentRightX - 90, y2 + 82);
+            ctx.fillText('..........................................................................................................................................', contentRightX - 95, y2 + 82);
 
             ctx.font = '17px Tahoma, "Segoe UI", sans-serif';
             ctx.fillText('مبلغ  ..............................  ریال در تاریخ  ....................  از  ..................................  پرداخت گردید .', contentRightX, y2 + 125);
@@ -1442,16 +1655,23 @@
             ctx.lineTo(fX + 2 * sigBoxW, fY + fH);
             ctx.stroke();
 
-            // Right Box: درخواست کننده
+            // Right Box: درخواست کننده + Requester Name underneath
             ctx.textAlign = 'center';
             ctx.font = 'bold 19px Tahoma, "Segoe UI", sans-serif';
-            ctx.fillText('درخواست کننده', fX + 2.5 * sigBoxW, y3 + 40);
+            ctx.fillText('درخواست کننده', fX + 2.5 * sigBoxW, y3 + 35);
+
+            const reqNameVal = (requesterName.value || '').trim();
+            if (reqNameVal) {
+                ctx.font = 'bold 18px Tahoma, "Segoe UI", sans-serif';
+                ctx.fillText(reqNameVal, fX + 2.5 * sigBoxW, y3 + 74);
+            }
 
             // Middle Box: حسابداری
-            ctx.fillText('حسابداری', fX + 1.5 * sigBoxW, y3 + 40);
+            ctx.font = 'bold 19px Tahoma, "Segoe UI", sans-serif';
+            ctx.fillText('حسابداری', fX + 1.5 * sigBoxW, y3 + 35);
 
             // Left Box: امضاء مدیر داخلی
-            ctx.fillText('امضاء مدیر داخلی', fX + 0.5 * sigBoxW, y3 + 40);
+            ctx.fillText('امضاء مدیر داخلی', fX + 0.5 * sigBoxW, y3 + 35);
         }
 
         // Helper to draw clean checkboxes on Canvas
@@ -1541,22 +1761,43 @@
             window.print();
         });
 
-        // Reset / New Doc
+        // Reset / New Doc via In-Page Modal
+        const resetModal = document.getElementById('resetModal');
         document.getElementById('btnReset').addEventListener('click', () => {
-            if (confirm('آیا مایل به ایجاد سند جدید هستید؟ (اطلاعات فعلی پاک خواهند شد)')) {
-                docDate.value = getTodayJalali();
-                purpose.value = '';
-                recipient.value = '';
-                account.value = '';
-                lastAccountDigits = '';
-                updateAccountStatusUI('empty', 0);
-                amount.value = '';
-                lastAmountDigits = '';
-                amountWords.innerText = 'حروف: صفر ریال';
-                localStorage.removeItem('persian_voucher_draft_v3');
-                updatePreview();
-                showToast('📄 فرم برای سند جدید آماده شد.');
+            resetModal.style.display = 'flex';
+        });
+
+        document.getElementById('btnCancelReset').addEventListener('click', () => {
+            resetModal.style.display = 'none';
+        });
+
+        resetModal.addEventListener('click', (e) => {
+            if (e.target.id === 'resetModal') {
+                resetModal.style.display = 'none';
             }
+        });
+
+        document.getElementById('btnConfirmReset').addEventListener('click', () => {
+            docDate.value = getTodayJalali();
+            purpose.value = '';
+            recipient.value = '';
+            account.value = '';
+            lastAccountDigits = '';
+            sameAsRecipient.checked = false;
+            accountHolder.value = '';
+            accountHolder.disabled = false;
+            updateAccountStatusUI('empty', 0);
+            amount.value = '';
+            lastAmountDigits = '';
+            amountWords.innerText = 'حروف: صفر ریال';
+            requesterName.value = '';
+            try {
+                localStorage.removeItem('persian_voucher_draft_v4');
+                localStorage.removeItem('persian_voucher_draft_v3');
+            } catch (e) {}
+            resetModal.style.display = 'none';
+            updatePreview();
+            showToast('📄 فرم برای سند جدید آماده شد.');
         });
 
         // PWA Install / Shortcut Modal
