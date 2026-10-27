@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>سند پرداخت - گروه صنعتی پرشین</title>
+    <title>پرتال فرم‌های رسمی - گروه صنعتی پرشین</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -674,6 +674,215 @@
             margin-top: 6px;
         }
 
+
+        /* Unified Form Selector at Top of Page */
+        .form-type-selector-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 2px solid #cbd5e1;
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+        }
+
+        .selector-header-title {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .selector-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .selector-option-btn {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 2px solid #cbd5e1;
+            background: #ffffff;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.22s ease;
+            text-align: right;
+        }
+
+        .selector-option-btn:hover {
+            border-color: #94a3b8;
+            background: #f8fafc;
+        }
+
+        .selector-option-btn.active-form-btn {
+            border-color: var(--primary);
+            background: #eff6ff;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.14);
+        }
+
+        .selector-btn-main {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .selector-btn-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            transition: all 0.2s;
+        }
+
+        .selector-option-btn.active-form-btn .selector-btn-icon {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .selector-btn-texts {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .selector-btn-title {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .selector-option-btn.active-form-btn .selector-btn-title {
+            color: var(--primary);
+        }
+
+        .selector-btn-sub {
+            font-size: 0.76rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .selector-btn-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: #e2e8f0;
+            color: #475569;
+            white-space: nowrap;
+        }
+
+        .selector-option-btn.active-form-btn .selector-btn-badge {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        /* Leave Mode Switcher (Hourly on Right, Daily on Left in RTL) */
+        .leave-mode-tabs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 16px;
+            background: #f1f5f9;
+            padding: 6px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .leave-mode-tab {
+            padding: 11px 10px;
+            border-radius: 9px;
+            border: 1.5px solid transparent;
+            background: transparent;
+            color: #475569;
+            font-size: 0.92rem;
+            font-weight: 800;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .leave-mode-tab.active-mode {
+            background: #ffffff;
+            color: var(--primary);
+            border-color: #bfdbfe;
+            box-shadow: 0 2px 8px rgba(30, 58, 138, 0.12);
+        }
+
+        /* Leave Type Checkboxes (استحقاقی / استعلاجی / بدون حقوق) */
+        .leave-type-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        .leave-type-option {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 10px 8px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 9px;
+            background: #ffffff;
+            cursor: pointer;
+            font-size: 0.86rem;
+            font-weight: 700;
+            color: #1e293b;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .leave-type-option input[type="radio"] {
+            width: 17px;
+            height: 17px;
+            accent-color: var(--primary);
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .leave-type-option.selected-type {
+            border-color: var(--primary);
+            background: #eff6ff;
+            color: var(--primary);
+        }
+
+        .leave-live-sentence-box {
+            background: #f8fafc;
+            border: 1.5px dashed #94a3b8;
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-top: 12px;
+            font-size: 0.88rem;
+            line-height: 1.75;
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        .leave-live-sentence-box strong {
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        #leaveExportCanvas {
+            display: none;
+        }
+
         /* Hidden Export Canvas & Print Image */
         #voucherExportCanvas {
             display: none;
@@ -693,7 +902,8 @@
             .main-wrapper,
             .modal-overlay,
             .toast,
-            #voucherExportCanvas {
+            #voucherExportCanvas,
+            #leaveExportCanvas {
                 display: none !important;
             }
             #printVoucherImg {
@@ -800,8 +1010,38 @@
 <!-- Main App Layout -->
 <div class="main-wrapper">
 
-    <!-- Left Column: Input Form (Purely for Employee / Requester) -->
-    <div class="form-column">
+    <!-- Top Unified Form Selector (Single-Page Dynamic Switcher + Smooth Scroll) -->
+    <div class="form-type-selector-card" id="topFormSelector">
+        <div class="selector-header-title">📌 لطفاً فرم مورد نظر خود را انتخاب کنید:</div>
+        <div class="selector-stack">
+            <!-- Option 1 (Top): Payment Voucher -->
+            <button type="button" class="selector-option-btn active-form-btn" id="btnSelectVoucherForm">
+                <div class="selector-btn-main">
+                    <div class="selector-btn-icon">💰</div>
+                    <div class="selector-btn-texts">
+                        <span class="selector-btn-title">پر کردن سند پرداخت</span>
+                        <span class="selector-btn-sub">ثبت درخواست واریز وجه و دریافت تصویر رسمی سند پرداخت (A5 افقی)</span>
+                    </div>
+                </div>
+                <span class="selector-btn-badge" id="badgeVoucherForm">فعال ✓</span>
+            </button>
+
+            <!-- Option 2 (Bottom): Leave Request Form -->
+            <button type="button" class="selector-option-btn" id="btnSelectLeaveForm">
+                <div class="selector-btn-main">
+                    <div class="selector-btn-icon">📅</div>
+                    <div class="selector-btn-texts">
+                        <span class="selector-btn-title">پر کردن برگه مرخصی</span>
+                        <span class="selector-btn-sub">ثبت درخواست مرخصی ساعتی یا روزانه و دریافت برگه مرخصی (A5 افقی)</span>
+                    </div>
+                </div>
+                <span class="selector-btn-badge" id="badgeLeaveForm">انتخاب فرم</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- SECTION 1: Payment Voucher Form (سند پرداخت) -->
+    <div class="form-column" id="sectionVoucherForm">
         <!-- Card 1: Document Basics -->
         <div class="card">
             <div class="card-header">
@@ -865,7 +1105,7 @@
         <div class="card">
             <div class="actions-grid">
                 <button type="button" class="btn btn-download" id="btnDownload">
-                    <span>📥 دانلود عکس</span>
+                    <span>📥 دانلود عکس سند</span>
                 </button>
                 <button type="button" class="btn btn-share" id="btnShare">
                     <span>📤 اشتراک‌گذاری سند</span>
@@ -874,6 +1114,126 @@
                     <span>📄 سند جدید</span>
                 </button>
                 <button type="button" class="btn btn-print" id="btnPrint">
+                    <span>🖨️ چاپ مستقیم</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 2: Leave Request Form (برگه درخواست مرخصی پرسنل - A5 افقی) -->
+    <div class="form-column" id="sectionLeaveForm" style="display: none;">
+        <!-- Card 1: Leave Mode (Right: مرخصی ساعتی | Left: مرخصی روزانه) -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">📋 فرم درخواست مرخصی پرسنل</div>
+                <button type="button" class="btn-today" id="btnSetLeaveToday">📅 تاریخ امروز</button>
+            </div>
+
+            <!-- Mode Selector: Right = مرخصی ساعتی , Left = مرخصی روزانه -->
+            <label style="margin-bottom: 6px;">نوع زمان مرخصی را انتخاب کنید:</label>
+            <div class="leave-mode-tabs" role="tablist">
+                <button type="button" class="leave-mode-tab active-mode" id="btnModeHourly" data-mode="hourly">
+                    <span>⏱️ مرخصی ساعتی</span>
+                </button>
+                <button type="button" class="leave-mode-tab" id="btnModeDaily" data-mode="daily">
+                    <span>📅 مرخصی روزانه</span>
+                </button>
+            </div>
+
+            <!-- Common Applicant Info -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="leaveFullName">احتراما اینجانب (نام و نام خانوادگی): <span class="required-badge">* (اجباری)</span></label>
+                    <input type="text" id="leaveFullName" required aria-required="true" placeholder="نام و نام خانوادگی پرسنل">
+                    <div class="field-error-msg" id="leaveNameErrorMsg">⚠️ لطفاً نام و نام خانوادگی را وارد کنید.</div>
+                </div>
+                <div class="form-group">
+                    <label for="leaveJobTitle">به سمت (سمت شغلی):</label>
+                    <input type="text" id="leaveJobTitle" placeholder="مثال: کارشناس فنی / تولید">
+                </div>
+            </div>
+
+            <!-- Dynamic Fields Group A: Hourly Leave (مرخصی ساعتی) -->
+            <div id="hourlyFieldsContainer">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="leaveHoursDuration">به مدت (چند ساعت):</label>
+                        <input type="text" id="leaveHoursDuration" inputmode="numeric" pattern="[0-9۰-۹]*" dir="ltr" autocomplete="off" placeholder="مثال: ۲">
+                    </div>
+                    <div class="form-group">
+                        <label for="leaveHourlyDate">در تاریخ (با کیبورد عددی):</label>
+                        <input type="text" id="leaveHourlyDate" inputmode="numeric" dir="ltr" maxlength="10" autocomplete="off" placeholder="۱۴۰۵/۰۸/۰۵">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group" style="margin-bottom: 6px;">
+                        <label for="leaveFromTime">از ساعت (مثلاً بزنید ۱۳ یا ۱۳۰۰):</label>
+                        <input type="text" id="leaveFromTime" inputmode="numeric" dir="ltr" maxlength="5" autocomplete="off" placeholder="۱۳:۰۰">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 6px;">
+                        <label for="leaveToTime">الی ساعت (مثلاً بزنید ۱۵ یا ۱۵۳۰):</label>
+                        <input type="text" id="leaveToTime" inputmode="numeric" dir="ltr" maxlength="5" autocomplete="off" placeholder="۱۵:۳۰">
+                    </div>
+                </div>
+                <div class="field-status-badge" style="margin-bottom: 14px;">
+                    <span>⌚ با وارد کردن عدد ساعت (مثلاً ۱۳ یا ۱۳۰۰) به صورت خودکار ۱۳:۰۰ درج می‌شود</span>
+                </div>
+            </div>
+
+            <!-- Dynamic Fields Group B: Daily Leave (مرخصی روزانه) -->
+            <div id="dailyFieldsContainer" style="display: none;">
+                <div class="form-group">
+                    <label for="leaveDaysDuration">به مدت (چند روز):</label>
+                    <input type="text" id="leaveDaysDuration" inputmode="numeric" pattern="[0-9۰-۹]*" dir="ltr" autocomplete="off" placeholder="مثال: ۳">
+                </div>
+                <div class="form-row">
+                    <div class="form-group" style="margin-bottom: 6px;">
+                        <label for="leaveFromDate">از تاریخ (با کیبورد عددی):</label>
+                        <input type="text" id="leaveFromDate" inputmode="numeric" dir="ltr" maxlength="10" autocomplete="off" placeholder="۱۴۰۵/۰۸/۰۵">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 6px;">
+                        <label for="leaveToDate">الی تاریخ (با کیبورد عددی):</label>
+                        <input type="text" id="leaveToDate" inputmode="numeric" dir="ltr" maxlength="10" autocomplete="off" placeholder="۱۴۰۵/۰۸/۰۷">
+                    </div>
+                </div>
+                <div class="field-status-badge" style="margin-bottom: 14px;">
+                    <span>📅 می‌توانید تاریخ را مستقیم با اعداد وارد کنید (فرمت خودکار: ۱۴۰۵/ماه/روز)</span>
+                </div>
+            </div>
+
+            <!-- Leave Type Selection (نیاز به مرخصی: استحقاقی / استعلاجی / بدون حقوق) -->
+            <div class="form-group" style="margin-bottom: 4px;">
+                <label>نیاز به مرخصی:</label>
+                <div class="leave-type-grid" id="leaveTypeGroup">
+                    <label class="leave-type-option selected-type" id="lblTypeEstehghaghi">
+                        <input type="radio" name="leaveTypeRadio" value="استحقاقی" checked>
+                        <span>استحقاقی</span>
+                    </label>
+                    <label class="leave-type-option" id="lblTypeEstelaji">
+                        <input type="radio" name="leaveTypeRadio" value="استعلاجی">
+                        <span>استعلاجی</span>
+                    </label>
+                    <label class="leave-type-option" id="lblTypeBedooneHoghoogh">
+                        <input type="radio" name="leaveTypeRadio" value="بدون حقوق">
+                        <span>بدون حقوق</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Leave Form Actions -->
+        <div class="card">
+            <div class="actions-grid">
+                <button type="button" class="btn btn-download" id="btnLeaveDownload">
+                    <span>📥 ذخیره عکس در گوشی</span>
+                </button>
+                <button type="button" class="btn btn-share" id="btnLeaveShare">
+                    <span>📤 اشتراک‌گذاری برگه</span>
+                </button>
+                <button type="button" class="btn btn-reset" id="btnLeaveReset">
+                    <span>📄 برگه مرخصی جدید</span>
+                </button>
+                <button type="button" class="btn btn-print" id="btnLeavePrint">
                     <span>🖨️ چاپ مستقیم</span>
                 </button>
             </div>
@@ -1018,6 +1378,7 @@
 
 <!-- Hidden Canvas for Crisp A5 Landscape Image Export (Ratio 210:148 -> 1420x1000) -->
 <canvas id="voucherExportCanvas" width="1420" height="1000"></canvas>
+<canvas id="leaveExportCanvas" width="1420" height="1000"></canvas>
 <img id="printVoucherImg" alt="سند پرداخت گروه صنعتی پرشین">
 
 <!-- Modal: How to add to home screen (PWA shortcut) -->
@@ -1498,7 +1859,7 @@
 
         const VOUCHER_FONT = '"B Nazanin", "BNazanin", Tahoma, "Segoe UI", serif';
 
-        // Helper to draw clean vertical text on Canvas (B Nazanin Bold)
+        // Helper to draw clean vertical text on Canvas (B Nazanin Bold, +2px size -> 28px)
         function drawVerticalText(ctx, text, x, y) {
             ctx.save();
             ctx.translate(x, y);
@@ -1506,13 +1867,13 @@
             ctx.direction = 'rtl';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            ctx.font = 'bold 26px ' + VOUCHER_FONT;
+            ctx.font = 'bold 28px ' + VOUCHER_FONT;
             ctx.fillStyle = '#000000';
             ctx.fillText(text, 0, 0);
             ctx.restore();
         }
 
-        // High-Resolution Canvas Rendering Engine (A5 Landscape: 1420 x 1000, All Fonts B Nazanin Bold)
+        // High-Resolution Canvas Rendering Engine (A5 Landscape: 1420 x 1000, All Fonts B Nazanin Bold +2px)
         function renderCanvas() {
             const canvas = document.getElementById('voucherExportCanvas');
             const ctx = canvas.getContext('2d');
@@ -1535,21 +1896,21 @@
                 ctx.drawImage(logoImg, W - 115 - logoW, 22, logoW, logoH);
             }
 
-            // Top Center: Titles (B Nazanin Bold)
+            // Top Center: Titles (B Nazanin Bold, +2px)
             ctx.fillStyle = '#000000';
             ctx.textAlign = 'center';
-            ctx.font = 'bold 31px ' + VOUCHER_FONT;
+            ctx.font = 'bold 33px ' + VOUCHER_FONT;
             ctx.fillText('گروه صنعتی پرشین', W / 2, 62);
 
-            ctx.font = 'bold 44px ' + VOUCHER_FONT;
+            ctx.font = 'bold 46px ' + VOUCHER_FONT;
             ctx.fillText('سند پرداخت', W / 2, 122);
 
-            // Top Left: Metadata (شماره سند left blank for finance unit, تاریخ filled)
+            // Top Left: Metadata (Moved slightly down and slightly right +2px font size)
             ctx.textAlign = 'left';
-            ctx.font = 'bold 22px ' + VOUCHER_FONT;
-            const metaX = 65;
-            ctx.fillText('شماره : ......................', metaX, 62);
-            ctx.fillText('تاریخ : ' + (docDate.value || getTodayJalali()), metaX, 104);
+            ctx.font = 'bold 24px ' + VOUCHER_FONT;
+            const metaX = 88;
+            ctx.fillText('شماره : ......................', metaX, 72);
+            ctx.fillText('تاریخ : ' + (docDate.value || getTodayJalali()), metaX, 114);
 
             // 3. Main Frame (Sized proportionally for A5 Landscape)
             const fX = 55;
@@ -1594,16 +1955,16 @@
             ctx.stroke();
 
             // -------------------------------------------------------------
-            // SECTION 1: CONTENT (B Nazanin Bold)
+            // SECTION 1: CONTENT (B Nazanin Bold, +2px)
             // -------------------------------------------------------------
             ctx.direction = 'rtl';
             ctx.textAlign = 'right';
             const contentRightX = fX + fW - 22;
 
-            ctx.font = 'bold 24px ' + VOUCHER_FONT;
+            ctx.font = 'bold 26px ' + VOUCHER_FONT;
             ctx.fillText('مدیریت محترم داخلی شرکت پرشین', contentRightX, fY + 40);
 
-            ctx.font = 'bold 21px ' + VOUCHER_FONT;
+            ctx.font = 'bold 23px ' + VOUCHER_FONT;
             ctx.fillText('احتراما در صورت تایید فاکتورهای پیوست شده، مبلغ زیر را به شماره حساب داده شده واریز فرمایید .', contentRightX, fY + 76);
 
             // Sub-Table (4 rows: بابت, برای آقای, شماره حساب, مبلغ)
@@ -1611,7 +1972,7 @@
             const tY = fY + 100;
             const tW = fX + fW - tX - 16;
             const tRowH = 52;
-            const labelColW = 250;
+            const labelColW = 268;
 
             // Draw inner table outline
             ctx.lineWidth = 1.6;
@@ -1651,46 +2012,46 @@
                 ctx.lineTo(labelLeft, rowTop + tRowH);
                 ctx.stroke();
 
-                // Label text (B Nazanin Bold)
+                // Label text (B Nazanin Bold, +2px -> 23px)
                 ctx.fillStyle = '#000000';
-                ctx.font = 'bold 21px ' + VOUCHER_FONT;
-                ctx.fillText(labels[i], tX + tW - 15, rowTop + 34);
+                ctx.font = 'bold 23px ' + VOUCHER_FONT;
+                ctx.fillText(labels[i], tX + tW - 15, rowTop + 35);
 
-                // Value text (B Nazanin Bold)
+                // Value text (B Nazanin Bold, +2px -> 23px)
                 if (i === 2) {
                     const rightStartX = labelLeft - 15;
                     if (accFormatted && holderName) {
                         ctx.save();
                         ctx.direction = 'ltr';
                         ctx.textAlign = 'right';
-                        ctx.font = 'bold 21px ' + VOUCHER_FONT;
-                        ctx.fillText(accFormatted, rightStartX, rowTop + 34);
+                        ctx.font = 'bold 23px ' + VOUCHER_FONT;
+                        ctx.fillText(accFormatted, rightStartX, rowTop + 35);
                         const accWidth = ctx.measureText(accFormatted).width;
                         ctx.restore();
 
                         ctx.save();
                         ctx.direction = 'rtl';
                         ctx.textAlign = 'right';
-                        ctx.font = 'bold 21px ' + VOUCHER_FONT;
-                        ctx.fillText('- به نام ' + holderName, rightStartX - accWidth - 16, rowTop + 34);
+                        ctx.font = 'bold 23px ' + VOUCHER_FONT;
+                        ctx.fillText('- به نام ' + holderName, rightStartX - accWidth - 16, rowTop + 35);
                         ctx.restore();
                     } else if (accFormatted) {
                         ctx.save();
                         ctx.direction = 'ltr';
                         ctx.textAlign = 'right';
-                        ctx.font = 'bold 21px ' + VOUCHER_FONT;
-                        ctx.fillText(accFormatted, rightStartX, rowTop + 34);
+                        ctx.font = 'bold 23px ' + VOUCHER_FONT;
+                        ctx.fillText(accFormatted, rightStartX, rowTop + 35);
                         ctx.restore();
                     } else if (holderName) {
-                        ctx.font = 'bold 21px ' + VOUCHER_FONT;
-                        ctx.fillText('به نام ' + holderName, rightStartX, rowTop + 34);
+                        ctx.font = 'bold 23px ' + VOUCHER_FONT;
+                        ctx.fillText('به نام ' + holderName, rightStartX, rowTop + 35);
                     } else {
-                        ctx.font = 'bold 21px ' + VOUCHER_FONT;
-                        ctx.fillText('-', rightStartX, rowTop + 34);
+                        ctx.font = 'bold 23px ' + VOUCHER_FONT;
+                        ctx.fillText('-', rightStartX, rowTop + 35);
                     }
                 } else {
-                    ctx.font = 'bold 21px ' + VOUCHER_FONT;
-                    ctx.fillText(vals[i], labelLeft - 15, rowTop + 34);
+                    ctx.font = 'bold 23px ' + VOUCHER_FONT;
+                    ctx.fillText(vals[i], labelLeft - 15, rowTop + 35);
                 }
             }
 
@@ -1698,11 +2059,11 @@
             drawVerticalText(ctx, 'درخواست کننده', fX + roleColW / 2, fY + row1H / 2);
 
             // -------------------------------------------------------------
-            // SECTION 2: FINANCIAL UNIT (B Nazanin Bold)
+            // SECTION 2: FINANCIAL UNIT (B Nazanin Bold, +2px)
             // -------------------------------------------------------------
             ctx.direction = 'rtl';
             ctx.textAlign = 'right';
-            ctx.font = 'bold 22px ' + VOUCHER_FONT;
+            ctx.font = 'bold 24px ' + VOUCHER_FONT;
             const finTitle = 'واحد محترم مالی';
             ctx.fillText(finTitle, contentRightX, y1 + 45);
             const finTitleW = ctx.measureText(finTitle).width;
@@ -1712,56 +2073,56 @@
             ctx.fillText(payYesText, payYesX, y1 + 45);
             const payYesW = ctx.measureText(payYesText).width;
 
-            const cbFin1X = payYesX - payYesW - 34;
-            drawCheckbox(ctx, cbFin1X, y1 + 24, 21, false);
+            const cbFin1X = payYesX - payYesW - 36;
+            drawCheckbox(ctx, cbFin1X, y1 + 23, 23, false);
 
             const payNoText = 'نگردد';
             const payNoX = cbFin1X - 30;
             ctx.fillText(payNoText, payNoX, y1 + 45);
             const payNoW = ctx.measureText(payNoText).width;
 
-            const cbFin2X = payNoX - payNoW - 34;
-            drawCheckbox(ctx, cbFin2X, y1 + 24, 21, false);
+            const cbFin2X = payNoX - payNoW - 36;
+            drawCheckbox(ctx, cbFin2X, y1 + 23, 23, false);
 
-            ctx.font = 'bold 21px ' + VOUCHER_FONT;
+            ctx.font = 'bold 23px ' + VOUCHER_FONT;
             ctx.fillText('توضیحات :', contentRightX, y1 + 96);
-            ctx.fillText('..........................................................................................................................................', contentRightX - 100, y1 + 96);
+            ctx.fillText('....................................................................................................................................', contentRightX - 110, y1 + 96);
 
             // Left Box 2: مدیر داخلی
             drawVerticalText(ctx, 'مدیر داخلی', fX + roleColW / 2, y1 + row2H / 2);
 
             // -------------------------------------------------------------
-            // SECTION 3: INVOICES & ACCOUNTING (B Nazanin Bold)
+            // SECTION 3: INVOICES & ACCOUNTING (B Nazanin Bold, +2px)
             // -------------------------------------------------------------
             ctx.direction = 'rtl';
             ctx.textAlign = 'right';
-            ctx.font = 'bold 22px ' + VOUCHER_FONT;
+            ctx.font = 'bold 24px ' + VOUCHER_FONT;
             const matchYesText = 'مبلغ فوق با فاکتورها مطابقت دارد';
             ctx.fillText(matchYesText, contentRightX, y2 + 44);
             const matchYesW = ctx.measureText(matchYesText).width;
 
-            const cbAcc1X = contentRightX - matchYesW - 34;
-            drawCheckbox(ctx, cbAcc1X, y2 + 23, 21, false);
+            const cbAcc1X = contentRightX - matchYesW - 36;
+            drawCheckbox(ctx, cbAcc1X, y2 + 22, 23, false);
 
             const matchNoText = 'ندارد';
             const matchNoX = cbAcc1X - 32;
             ctx.fillText(matchNoText, matchNoX, y2 + 44);
             const matchNoW = ctx.measureText(matchNoText).width;
 
-            const cbAcc2X = matchNoX - matchNoW - 34;
-            drawCheckbox(ctx, cbAcc2X, y2 + 23, 21, false);
+            const cbAcc2X = matchNoX - matchNoW - 36;
+            drawCheckbox(ctx, cbAcc2X, y2 + 22, 23, false);
 
-            ctx.font = 'bold 21px ' + VOUCHER_FONT;
+            ctx.font = 'bold 23px ' + VOUCHER_FONT;
             ctx.fillText('توضیحات :', contentRightX, y2 + 90);
-            ctx.fillText('..........................................................................................................................................', contentRightX - 100, y2 + 90);
+            ctx.fillText('....................................................................................................................................', contentRightX - 110, y2 + 90);
 
-            ctx.fillText('مبلغ  ..............................  ریال در تاریخ  ....................  از  ..................................  پرداخت گردید .', contentRightX, y2 + 136);
+            ctx.fillText('مبلغ  ............................  ریال در تاریخ  ..................  از  ................................  پرداخت گردید .', contentRightX, y2 + 136);
 
             // Left Box 3: حسابداری
             drawVerticalText(ctx, 'حسابداری', fX + roleColW / 2, y2 + row3H / 2);
 
             // -------------------------------------------------------------
-            // SECTION 4: BOTTOM SIGNATURE CELLS (3 equal boxes, B Nazanin Bold)
+            // SECTION 4: BOTTOM SIGNATURE CELLS (3 equal boxes, B Nazanin Bold, +2px)
             // -------------------------------------------------------------
             const sigBoxW = fW / 3;
             ctx.lineWidth = 1.6;
@@ -1774,20 +2135,20 @@
 
             // Right Box: درخواست کننده + Requester Name underneath
             ctx.textAlign = 'center';
-            ctx.font = 'bold 23px ' + VOUCHER_FONT;
+            ctx.font = 'bold 25px ' + VOUCHER_FONT;
             ctx.fillText('درخواست کننده', fX + 2.5 * sigBoxW, y3 + 38);
 
             const reqNameVal = (requesterName.value || '').trim();
             if (reqNameVal) {
-                ctx.font = 'bold 22px ' + VOUCHER_FONT;
+                ctx.font = 'bold 24px ' + VOUCHER_FONT;
                 ctx.fillText(reqNameVal, fX + 2.5 * sigBoxW, y3 + 80);
             }
 
             // Middle Box: حسابداری
-            ctx.font = 'bold 23px ' + VOUCHER_FONT;
+            ctx.font = 'bold 25px ' + VOUCHER_FONT;
             ctx.fillText('حسابداری', fX + 1.5 * sigBoxW, y3 + 38);
 
-            // Left Box: امضاء مدیر داخلی
+            // Left Box: مدیر داخلی
             ctx.fillText('مدیر داخلی', fX + 0.5 * sigBoxW, y3 + 38);
         }
 
@@ -1799,7 +2160,7 @@
             ctx.strokeRect(x, y, size, size);
             if (isChecked) {
                 ctx.fillStyle = '#000000';
-                ctx.font = 'bold 20px ' + VOUCHER_FONT;
+                ctx.font = 'bold 22px ' + VOUCHER_FONT;
                 ctx.textAlign = 'center';
                 ctx.fillText('✓', x + size / 2, y + size - 3);
             }
@@ -1942,6 +2303,678 @@
             resetModal.style.display = 'none';
             updatePreview();
             showToast('📄 فرم برای سند جدید آماده شد.');
+        });
+
+
+        // =============================================================
+        // UNIFIED FORM SELECTOR & LEAVE REQUEST FORM (برگه مرخصی - A5 افقی)
+        // =============================================================
+        const btnSelectVoucherForm = document.getElementById('btnSelectVoucherForm');
+        const btnSelectLeaveForm = document.getElementById('btnSelectLeaveForm');
+        const badgeVoucherForm = document.getElementById('badgeVoucherForm');
+        const badgeLeaveForm = document.getElementById('badgeLeaveForm');
+        const sectionVoucherForm = document.getElementById('sectionVoucherForm');
+        const sectionLeaveForm = document.getElementById('sectionLeaveForm');
+
+        function switchActiveForm(targetForm, shouldScroll) {
+            if (targetForm === 'voucher') {
+                sectionVoucherForm.style.display = 'block';
+                sectionLeaveForm.style.display = 'none';
+                btnSelectVoucherForm.classList.add('active-form-btn');
+                btnSelectLeaveForm.classList.remove('active-form-btn');
+                badgeVoucherForm.innerText = 'فعال ✓';
+                badgeLeaveForm.innerText = 'انتخاب فرم';
+                if (shouldScroll) {
+                    try {
+                        sectionVoucherForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } catch (e) {}
+                }
+            } else {
+                sectionVoucherForm.style.display = 'none';
+                sectionLeaveForm.style.display = 'block';
+                btnSelectLeaveForm.classList.add('active-form-btn');
+                btnSelectVoucherForm.classList.remove('active-form-btn');
+                badgeLeaveForm.innerText = 'فعال ✓';
+                badgeVoucherForm.innerText = 'انتخاب فرم';
+                if (shouldScroll) {
+                    try {
+                        sectionLeaveForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } catch (e) {}
+                }
+            }
+        }
+
+        btnSelectVoucherForm.addEventListener('click', () => switchActiveForm('voucher', true));
+        btnSelectLeaveForm.addEventListener('click', () => switchActiveForm('leave', true));
+
+        // Leave Form Elements
+        const btnModeHourly = document.getElementById('btnModeHourly');
+        const btnModeDaily = document.getElementById('btnModeDaily');
+        const hourlyFieldsContainer = document.getElementById('hourlyFieldsContainer');
+        const dailyFieldsContainer = document.getElementById('dailyFieldsContainer');
+
+        const leaveFullName = document.getElementById('leaveFullName');
+        const leaveNameErrorMsg = document.getElementById('leaveNameErrorMsg');
+        const leaveJobTitle = document.getElementById('leaveJobTitle');
+        const leaveHoursDuration = document.getElementById('leaveHoursDuration');
+        const leaveHourlyDate = document.getElementById('leaveHourlyDate');
+        const leaveFromTime = document.getElementById('leaveFromTime');
+        const leaveToTime = document.getElementById('leaveToTime');
+        const leaveDaysDuration = document.getElementById('leaveDaysDuration');
+        const leaveFromDate = document.getElementById('leaveFromDate');
+        const leaveToDate = document.getElementById('leaveToDate');
+        const leaveTypeRadios = document.querySelectorAll('input[name="leaveTypeRadio"]');
+
+        let currentLeaveMode = 'hourly'; // 'hourly' (Right) or 'daily' (Left)
+
+        // Default Dates in 1405
+        const todayJalaliStr = getTodayJalali();
+        leaveHourlyDate.value = todayJalaliStr;
+        leaveFromDate.value = todayJalaliStr;
+        leaveToDate.value = todayJalaliStr;
+
+        // Smart Time Formatter (live typing & blur completion: e.g. "13" -> "۱۳:۰۰", "1330" -> "۱۳:۳۰", "830" -> "۰۸:۳۰")
+        function formatTimeLive(rawVal, isBlur) {
+            const digits = extractDigits(rawVal).slice(0, 4);
+            if (!digits) return '';
+
+            if (!isBlur) {
+                // If first digit is 3..9 and user typed 2+ digits (e.g. "83" -> "08:3"), pad leading 0
+                if (digits.length >= 2 && parseInt(digits[0], 10) >= 3) {
+                    const padded = ('0' + digits).slice(0, 4);
+                    return toPersianDigits(padded.slice(0, 2) + ':' + padded.slice(2));
+                }
+                if (digits.length <= 2) {
+                    return toPersianDigits(digits);
+                }
+                return toPersianDigits(digits.slice(0, 2) + ':' + digits.slice(2));
+            } else {
+                // On blur or export: ensure full HH:MM format (e.g. "13" -> "۱۳:۰۰", "8" -> "۰۸:۰۰", "830" -> "۰۸:۳۰")
+                let hh = '00';
+                let mm = '00';
+                if (digits.length === 1) {
+                    hh = '0' + digits;
+                } else if (digits.length === 2) {
+                    const num = parseInt(digits, 10);
+                    if (num <= 23) {
+                        hh = digits;
+                    } else {
+                        hh = '0' + digits[0];
+                        mm = digits[1] + '0';
+                    }
+                } else if (digits.length === 3) {
+                    if (parseInt(digits[0], 10) >= 3 || parseInt(digits.slice(0, 2), 10) > 23) {
+                        hh = '0' + digits[0];
+                        mm = digits.slice(1, 3);
+                    } else {
+                        hh = digits.slice(0, 2);
+                        mm = '0' + digits[2];
+                    }
+                } else {
+                    hh = digits.slice(0, 2);
+                    mm = digits.slice(2, 4);
+                }
+                const hhNum = Math.min(23, parseInt(hh, 10) || 0);
+                const mmNum = Math.min(59, parseInt(mm, 10) || 0);
+                const hhStr = hhNum < 10 ? '0' + hhNum : '' + hhNum;
+                const mmStr = mmNum < 10 ? '0' + mmNum : '' + mmNum;
+                return toPersianDigits(hhStr + ':' + mmStr);
+            }
+        }
+
+        function attachSmartTimeInput(inputEl) {
+            let lastTimeDigits = '';
+            inputEl.addEventListener('input', (e) => {
+                let digits = extractDigits(inputEl.value);
+                if (e.inputType === 'deleteContentBackward' && digits === lastTimeDigits && lastTimeDigits.length > 0) {
+                    digits = digits.slice(0, -1);
+                }
+                lastTimeDigits = digits.slice(0, 4);
+                inputEl.value = formatTimeLive(lastTimeDigits, false);
+                saveLeaveDraft();
+            });
+            inputEl.addEventListener('blur', () => {
+                if (extractDigits(inputEl.value).length > 0) {
+                    inputEl.value = formatTimeLive(inputEl.value, true);
+                    lastTimeDigits = extractDigits(inputEl.value);
+                    saveLeaveDraft();
+                }
+            });
+        }
+
+        attachSmartTimeInput(leaveFromTime);
+        attachSmartTimeInput(leaveToTime);
+
+        // Smart Numeric Date Input Formatter (YYYY/MM/DD in Persian digits with 1405 support)
+        function formatDateLive(rawVal, isBlur) {
+            const digits = extractDigits(rawVal).slice(0, 8);
+            if (!digits) return '';
+            if (!isBlur) {
+                if (digits.length <= 4) {
+                    return toPersianDigits(digits);
+                } else if (digits.length <= 6) {
+                    return toPersianDigits(digits.slice(0, 4) + '/' + digits.slice(4));
+                } else {
+                    return toPersianDigits(digits.slice(0, 4) + '/' + digits.slice(4, 6) + '/' + digits.slice(6, 8));
+                }
+            } else {
+                // On blur: if user typed 4 digits for month/day (e.g. 0805), prepend 1405/
+                if (digits.length === 4 && !digits.startsWith('14')) {
+                    return toPersianDigits('1405/' + digits.slice(0, 2) + '/' + digits.slice(2, 4));
+                }
+                if (digits.length === 8) {
+                    return toPersianDigits(digits.slice(0, 4) + '/' + digits.slice(4, 6) + '/' + digits.slice(6, 8));
+                }
+                return toPersianDigits(rawVal);
+            }
+        }
+
+        function attachSmartDateInput(inputEl) {
+            let lastDateDigits = extractDigits(inputEl.value);
+            inputEl.addEventListener('input', (e) => {
+                let digits = extractDigits(inputEl.value);
+                if (e.inputType === 'deleteContentBackward' && digits === lastDateDigits && lastDateDigits.length > 0) {
+                    digits = digits.slice(0, -1);
+                }
+                lastDateDigits = digits.slice(0, 8);
+                inputEl.value = formatDateLive(lastDateDigits, false);
+                saveLeaveDraft();
+            });
+            inputEl.addEventListener('blur', () => {
+                if (extractDigits(inputEl.value).length > 0) {
+                    inputEl.value = formatDateLive(inputEl.value, true);
+                    lastDateDigits = extractDigits(inputEl.value);
+                    saveLeaveDraft();
+                }
+            });
+        }
+
+        attachSmartDateInput(leaveHourlyDate);
+        attachSmartDateInput(leaveFromDate);
+        attachSmartDateInput(leaveToDate);
+        attachSmartDateInput(docDate);
+
+        // Numeric Duration Inputs (convert numbers to Persian digits smoothly)
+        [leaveHoursDuration, leaveDaysDuration].forEach(durInput => {
+            durInput.addEventListener('input', () => {
+                const clean = extractDigits(durInput.value).slice(0, 3);
+                durInput.value = toPersianDigits(clean);
+                saveLeaveDraft();
+            });
+        });
+
+        function getSelectedLeaveType() {
+            for (const r of leaveTypeRadios) {
+                if (r.checked) return r.value;
+            }
+            return 'استحقاقی';
+        }
+
+        function setLeaveMode(mode) {
+            currentLeaveMode = mode;
+            if (mode === 'hourly') {
+                btnModeHourly.classList.add('active-mode');
+                btnModeDaily.classList.remove('active-mode');
+                hourlyFieldsContainer.style.display = 'block';
+                dailyFieldsContainer.style.display = 'none';
+            } else {
+                btnModeDaily.classList.add('active-mode');
+                btnModeHourly.classList.remove('active-mode');
+                hourlyFieldsContainer.style.display = 'none';
+                dailyFieldsContainer.style.display = 'block';
+            }
+            saveLeaveDraft();
+        }
+
+        btnModeHourly.addEventListener('click', () => setLeaveMode('hourly'));
+        btnModeDaily.addEventListener('click', () => setLeaveMode('daily'));
+
+        document.getElementById('btnSetLeaveToday').addEventListener('click', () => {
+            const t = getTodayJalali();
+            leaveHourlyDate.value = t;
+            leaveFromDate.value = t;
+            leaveToDate.value = t;
+            saveLeaveDraft();
+            showToast('📅 تاریخ امروز تنظیم شد.');
+        });
+
+        leaveTypeRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                document.getElementById('lblTypeEstehghaghi').classList.toggle('selected-type', radio.value === 'استحقاقی' && radio.checked);
+                document.getElementById('lblTypeEstelaji').classList.toggle('selected-type', radio.value === 'استعلاجی' && radio.checked);
+                document.getElementById('lblTypeBedooneHoghoogh').classList.toggle('selected-type', radio.value === 'بدون حقوق' && radio.checked);
+                saveLeaveDraft();
+            });
+        });
+
+        [leaveFullName, leaveJobTitle].forEach(el => {
+            el.addEventListener('input', () => {
+                if (el === leaveFullName && (leaveFullName.value || '').trim()) {
+                    leaveFullName.classList.remove('input-error');
+                    leaveNameErrorMsg.style.display = 'none';
+                }
+                saveLeaveDraft();
+            });
+        });
+
+        function saveLeaveDraft() {
+            try {
+                const data = {
+                    mode: currentLeaveMode,
+                    fullName: leaveFullName.value,
+                    jobTitle: leaveJobTitle.value,
+                    hoursDuration: leaveHoursDuration.value,
+                    hourlyDate: leaveHourlyDate.value,
+                    fromTime: leaveFromTime.value,
+                    toTime: leaveToTime.value,
+                    daysDuration: leaveDaysDuration.value,
+                    fromDate: leaveFromDate.value,
+                    toDate: leaveToDate.value,
+                    leaveType: getSelectedLeaveType()
+                };
+                localStorage.setItem('persian_leave_draft_v2', JSON.stringify(data));
+            } catch (e) {}
+        }
+
+        try {
+            const savedLeave = localStorage.getItem('persian_leave_draft_v2') || localStorage.getItem('persian_leave_draft_v1');
+            if (savedLeave) {
+                const d = JSON.parse(savedLeave);
+                if (d.fullName) leaveFullName.value = d.fullName;
+                if (d.jobTitle) leaveJobTitle.value = d.jobTitle;
+                if (d.hoursDuration) leaveHoursDuration.value = toPersianDigits(extractDigits(d.hoursDuration));
+                if (d.hourlyDate) leaveHourlyDate.value = d.hourlyDate;
+                if (d.fromTime) leaveFromTime.value = formatTimeLive(d.fromTime, true);
+                if (d.toTime) leaveToTime.value = formatTimeLive(d.toTime, true);
+                if (d.daysDuration) leaveDaysDuration.value = toPersianDigits(extractDigits(d.daysDuration));
+                if (d.fromDate) leaveFromDate.value = d.fromDate;
+                if (d.toDate) leaveToDate.value = d.toDate;
+                if (d.leaveType) {
+                    leaveTypeRadios.forEach(r => {
+                        r.checked = (r.value === d.leaveType);
+                    });
+                    document.getElementById('lblTypeEstehghaghi').classList.toggle('selected-type', d.leaveType === 'استحقاقی');
+                    document.getElementById('lblTypeEstelaji').classList.toggle('selected-type', d.leaveType === 'استعلاجی');
+                    document.getElementById('lblTypeBedooneHoghoogh').classList.toggle('selected-type', d.leaveType === 'بدون حقوق');
+                }
+                if (d.mode === 'daily' || d.mode === 'hourly') {
+                    setLeaveMode(d.mode);
+                }
+            }
+        } catch (e) {}
+
+        function validateLeaveBeforeExport() {
+            const val = (leaveFullName.value || '').trim();
+            if (!val) {
+                leaveFullName.classList.add('input-error');
+                leaveNameErrorMsg.style.display = 'block';
+                try {
+                    leaveFullName.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    leaveFullName.focus();
+                } catch (e) {}
+                showToast('⚠️ لطفاً ابتدا «نام و نام خانوادگی» را وارد کنید.');
+                return false;
+            }
+            // Ensure time fields are normalized to HH:MM before rendering
+            if (extractDigits(leaveFromTime.value).length > 0) {
+                leaveFromTime.value = formatTimeLive(leaveFromTime.value, true);
+            }
+            if (extractDigits(leaveToTime.value).length > 0) {
+                leaveToTime.value = formatTimeLive(leaveToTime.value, true);
+            }
+            leaveFullName.classList.remove('input-error');
+            leaveNameErrorMsg.style.display = 'none';
+            return true;
+        }
+
+        // Helper to draw a dotted blank slot from rightX leftward with centered bold value on top
+        function drawDottedSlot(ctx, rightStartX, y, slotWidth, valueStr, isLtrValue) {
+            ctx.save();
+            // Draw fine dotted line across slotWidth
+            ctx.beginPath();
+            ctx.setLineDash([2.5, 4.5]);
+            ctx.lineWidth = 1.8;
+            ctx.strokeStyle = '#333333';
+            ctx.moveTo(rightStartX - 4, y - 4);
+            ctx.lineTo(rightStartX - slotWidth + 4, y - 4);
+            ctx.stroke();
+            ctx.restore();
+
+            if (valueStr && valueStr.trim()) {
+                ctx.save();
+                ctx.direction = isLtrValue ? 'ltr' : 'rtl';
+                ctx.textAlign = 'center';
+                ctx.fillStyle = '#000000';
+                ctx.font = 'bold 31px ' + VOUCHER_FONT;
+                ctx.fillText(valueStr.trim(), rightStartX - slotWidth / 2, y - 8);
+                ctx.restore();
+            }
+        }
+
+        // High-Resolution A5 Landscape Canvas Renderer matching فرم مرخصی.pdf 100% (1420 x 1000, B Nazanin Bold)
+        function renderLeaveCanvas() {
+            const canvas = document.getElementById('leaveExportCanvas');
+            const ctx = canvas.getContext('2d');
+            const W = canvas.width;  // 1420 (A5 Landscape)
+            const H = canvas.height; // 1000 (A5 Landscape)
+
+            // 1. White Background
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, W, H);
+
+            // 2. Outer Thick Border (Exact match to فرم مرخصی.pdf)
+            const fX = 32;
+            const fY = 24;
+            const fW = W - 64; // 1356
+            const fH = H - 48; // 952
+
+            ctx.lineWidth = 4;
+            ctx.strokeStyle = '#000000';
+            ctx.strokeRect(fX, fY, fW, fH);
+
+            // 3. Two Horizontal Section Dividers inside Outer Border
+            const y1 = 315; // Top Header bottom line
+            const y2 = 768; // Middle Request Body bottom line
+
+            ctx.lineWidth = 1.6;
+            ctx.beginPath();
+            ctx.moveTo(fX, y1);
+            ctx.lineTo(fX + fW, y1);
+            ctx.moveTo(fX, y2);
+            ctx.lineTo(fX + fW, y2);
+            ctx.stroke();
+
+            // -------------------------------------------------------------
+            // TOP SECTION: Logo on Right, Title & روزانه / ساعتی Checkboxes Centered
+            // -------------------------------------------------------------
+            if (logoImg.complete && logoImg.naturalWidth > 0) {
+                const logoW = 192;
+                const logoH = 248;
+                ctx.drawImage(logoImg, fX + fW - 95 - logoW, fY + 18, logoW, logoH);
+            }
+
+            ctx.fillStyle = '#000000';
+            ctx.direction = 'rtl';
+            ctx.textAlign = 'center';
+            ctx.font = 'bold 47px ' + VOUCHER_FONT;
+            ctx.fillText('فرم درخواست مرخصی پرسنل', W / 2, fY + 95);
+
+            // Checkboxes Row: روزانه [ ] (Right)    ساعتی [ ] (Left)
+            const modeRowY = fY + 220;
+            ctx.font = 'bold 36px ' + VOUCHER_FONT;
+            ctx.textAlign = 'right';
+
+            // Right option: روزانه □
+            const dailyTextX = W / 2 + 215;
+            ctx.fillText('روزانه', dailyTextX, modeRowY);
+            const dailyTextW = ctx.measureText('روزانه').width;
+            drawCheckbox(ctx, dailyTextX - dailyTextW - 56, modeRowY - 27, 28, currentLeaveMode === 'daily');
+
+            // Left option: ساعتی □
+            const hourlyTextX = W / 2 - 35;
+            ctx.fillText('ساعتی', hourlyTextX, modeRowY);
+            const hourlyTextW = ctx.measureText('ساعتی').width;
+            drawCheckbox(ctx, hourlyTextX - hourlyTextW - 56, modeRowY - 27, 28, currentLeaveMode === 'hourly');
+
+            // -------------------------------------------------------------
+            // MIDDLE SECTION: 4 Rows of Leave Request Body
+            // -------------------------------------------------------------
+            const rightX = fX + fW - 115; // 1273
+            const leftX = fX + 115;       // 147
+            ctx.direction = 'rtl';
+            ctx.textAlign = 'right';
+            ctx.fillStyle = '#000000';
+
+            const row1Y = y1 + 92;  // 407
+            const row2Y = y1 + 194; // 509
+            const row3Y = y1 + 296; // 611
+            const row4Y = y1 + 388; // 703
+
+            const fullNameVal = (leaveFullName.value || '').trim();
+            const jobTitleVal = (leaveJobTitle.value || '').trim();
+            const selectedType = getSelectedLeaveType();
+
+            // ROW 1: احتراما اینجانب ....................... به سمت ................... به مدت .......... روز / ساعت
+            ctx.font = 'bold 31px ' + VOUCHER_FONT;
+            let curX = rightX;
+
+            const lblIntro = 'احتراما اینجانب ';
+            ctx.fillText(lblIntro, curX, row1Y);
+            curX -= ctx.measureText(lblIntro).width + 6;
+
+            const nameSlotW = 370;
+            drawDottedSlot(ctx, curX, row1Y, nameSlotW, fullNameVal, false);
+            curX -= nameSlotW + 10;
+
+            const lblRole = 'به سمت ';
+            ctx.fillText(lblRole, curX, row1Y);
+            curX -= ctx.measureText(lblRole).width + 6;
+
+            const roleSlotW = 265;
+            drawDottedSlot(ctx, curX, row1Y, roleSlotW, jobTitleVal, false);
+            curX -= roleSlotW + 10;
+
+            const lblDur = 'به مدت ';
+            ctx.fillText(lblDur, curX, row1Y);
+            curX -= ctx.measureText(lblDur).width + 6;
+
+            const unitWord = currentLeaveMode === 'hourly' ? 'ساعت' : 'روز';
+            const unitW = ctx.measureText(unitWord).width;
+            const durSlotW = Math.max(95, curX - (leftX + unitW + 12));
+            const durVal = currentLeaveMode === 'hourly'
+                ? toPersianDigits(extractDigits(leaveHoursDuration.value))
+                : toPersianDigits(extractDigits(leaveDaysDuration.value));
+            drawDottedSlot(ctx, curX, row1Y, durSlotW, durVal, false);
+
+            ctx.fillText(unitWord, leftX + unitW, row1Y);
+
+            // ROW 2: Dynamic based on Hourly vs Daily mode
+            ctx.font = 'bold 31px ' + VOUCHER_FONT;
+            let r2X = rightX;
+
+            if (currentLeaveMode === 'hourly') {
+                // Hourly mode: از ساعت ............. الی ساعت ............. در تاریخ ۱۴۰۵/../../
+                const lblFromT = 'از ساعت ';
+                ctx.fillText(lblFromT, r2X, row2Y);
+                r2X -= ctx.measureText(lblFromT).width + 8;
+
+                const fromTimeVal = toPersianDigits((leaveFromTime.value || '').trim());
+                drawDottedSlot(ctx, r2X, row2Y, 195, fromTimeVal, true);
+                r2X -= 195 + 16;
+
+                const lblToT = 'الی ساعت ';
+                ctx.fillText(lblToT, r2X, row2Y);
+                r2X -= ctx.measureText(lblToT).width + 8;
+
+                const toTimeVal = toPersianDigits((leaveToTime.value || '').trim());
+                drawDottedSlot(ctx, r2X, row2Y, 195, toTimeVal, true);
+                r2X -= 195 + 24;
+
+                const lblOnDate = 'در تاریخ ';
+                ctx.fillText(lblOnDate, r2X, row2Y);
+                r2X -= ctx.measureText(lblOnDate).width + 8;
+
+                const hDateVal = toPersianDigits((leaveHourlyDate.value || '').trim() || getTodayJalali());
+                drawDottedSlot(ctx, r2X, row2Y, 240, hDateVal, true);
+            } else {
+                // Daily mode: از تاریخ ............. الی تاریخ .............
+                const lblFromD = 'از تاریخ ';
+                ctx.fillText(lblFromD, r2X, row2Y);
+                r2X -= ctx.measureText(lblFromD).width + 10;
+
+                const fDateVal = toPersianDigits((leaveFromDate.value || '').trim() || getTodayJalali());
+                drawDottedSlot(ctx, r2X, row2Y, 275, fDateVal, true);
+                r2X -= 275 + 32;
+
+                const lblToD = 'الی تاریخ ';
+                ctx.fillText(lblToD, r2X, row2Y);
+                r2X -= ctx.measureText(lblToD).width + 10;
+
+                const tDateVal = toPersianDigits((leaveToDate.value || '').trim() || getTodayJalali());
+                drawDottedSlot(ctx, r2X, row2Y, 275, tDateVal, true);
+            }
+
+            // ROW 3: نیاز به مرخصی استحقاقی □       استعلاجی □       بدون حقوق □     دارم.
+            ctx.font = 'bold 31px ' + VOUCHER_FONT;
+            const r3Part1 = 'نیاز به مرخصی استحقاقی';
+            ctx.fillText(r3Part1, rightX, row3Y);
+            const r3Part1W = ctx.measureText(r3Part1).width;
+            drawCheckbox(ctx, rightX - r3Part1W - 42, row3Y - 24, 25, selectedType === 'استحقاقی');
+
+            const r3Part2 = 'استعلاجی';
+            const r3Part2X = rightX - r3Part1W - 155;
+            ctx.fillText(r3Part2, r3Part2X, row3Y);
+            const r3Part2W = ctx.measureText(r3Part2).width;
+            drawCheckbox(ctx, r3Part2X - r3Part2W - 42, row3Y - 24, 25, selectedType === 'استعلاجی');
+
+            const r3Part3 = 'بدون حقوق';
+            const r3Part3X = r3Part2X - r3Part2W - 155;
+            ctx.fillText(r3Part3, r3Part3X, row3Y);
+            const r3Part3W = ctx.measureText(r3Part3).width;
+            drawCheckbox(ctx, r3Part3X - r3Part3W - 42, row3Y - 24, 25, selectedType === 'بدون حقوق');
+
+            const r3End = 'دارم.';
+            const r3EndW = ctx.measureText(r3End).width;
+            ctx.fillText(r3End, leftX + r3EndW, row3Y);
+
+            // ROW 4: خواهشمند است در صورت صلاحدید موافقت نمایید.          امضاء
+            ctx.font = 'bold 31px ' + VOUCHER_FONT;
+            ctx.textAlign = 'right';
+            ctx.fillText('خواهشمند است در صورت صلاحدید موافقت نمایید.', rightX - 95, row4Y);
+
+            ctx.textAlign = 'center';
+            ctx.fillText('امضاء', fX + 255, row4Y);
+            if (fullNameVal) {
+                ctx.font = 'bold 25px ' + VOUCHER_FONT;
+                ctx.fillText(fullNameVal, fX + 255, row4Y + 42);
+            }
+
+            // -------------------------------------------------------------
+            // BOTTOM SECTION: موافقت می شود □   موافقت نمی شود □          امضاء مدیر
+            // -------------------------------------------------------------
+            const botY = y2 + 108; // 876
+            ctx.direction = 'rtl';
+            ctx.textAlign = 'right';
+            ctx.font = 'bold 31px ' + VOUCHER_FONT;
+
+            const okTitle = 'موافقت می شود';
+            const okTitleX = rightX - 195;
+            ctx.fillText(okTitle, okTitleX, botY);
+            const okTitleW = ctx.measureText(okTitle).width;
+            drawCheckbox(ctx, okTitleX - okTitleW - 38, botY - 23, 24, false);
+
+            const noTitle = 'موافقت نمی شود';
+            const noTitleX = okTitleX - okTitleW - 95;
+            ctx.fillText(noTitle, noTitleX, botY);
+            const noTitleW = ctx.measureText(noTitle).width;
+            drawCheckbox(ctx, noTitleX - noTitleW - 38, botY - 23, 24, false);
+
+            ctx.textAlign = 'center';
+            ctx.fillText('امضاء مدیر', fX + 265, botY);
+        }
+
+        function getLeaveExportFileName() {
+            const rawD = currentLeaveMode === 'hourly' ? leaveHourlyDate.value : leaveFromDate.value;
+            const cleanDate = toEnglishDigits(rawD || getTodayJalali()).replace(/[^0-9]/g, '-');
+            const modeTag = currentLeaveMode === 'hourly' ? 'ساعتی' : 'روزانه';
+            return 'برگه_مرخصی_' + modeTag + '_' + (cleanDate || 'جدید') + '.png';
+        }
+
+        // Leave Download Action (A5 Landscape)
+        document.getElementById('btnLeaveDownload').addEventListener('click', async () => {
+            if (!validateLeaveBeforeExport()) return;
+            try {
+                if (document.fonts && document.fonts.ready) {
+                    await document.fonts.ready;
+                }
+            } catch (e) {}
+            renderLeaveCanvas();
+            const canvas = document.getElementById('leaveExportCanvas');
+            const link = document.createElement('a');
+            link.download = getLeaveExportFileName();
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            showToast('✅ عکس برگه مرخصی (سایز A5 افقی با فونت بی نازنین بولد) دانلود شد.');
+        });
+
+        // Leave Share Action (A5 Landscape)
+        document.getElementById('btnLeaveShare').addEventListener('click', async () => {
+            if (!validateLeaveBeforeExport()) return;
+            try {
+                if (document.fonts && document.fonts.ready) {
+                    await document.fonts.ready;
+                }
+            } catch (e) {}
+            renderLeaveCanvas();
+            const canvas = document.getElementById('leaveExportCanvas');
+            const fileName = getLeaveExportFileName();
+
+            canvas.toBlob(async (blob) => {
+                if (!blob) {
+                    showToast('خطا در ایجاد تصویر برگه مرخصی');
+                    return;
+                }
+                const file = new File([blob], fileName, { type: 'image/png' });
+                if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                    try {
+                        await navigator.share({
+                            files: [file],
+                            title: 'فرم درخواست مرخصی پرسنل - گروه صنعتی پرشین',
+                            text: 'فرم درخواست مرخصی پرسنل - گروه صنعتی پرشین'
+                        });
+                        showToast('✅ برگه مرخصی با موفقیت به اشتراک گذاشته شد.');
+                    } catch (err) {
+                        if (err.name !== 'AbortError') {
+                            fallbackDownload(blob, fileName);
+                        }
+                    }
+                } else {
+                    fallbackDownload(blob, fileName);
+                }
+            }, 'image/png');
+        });
+
+        // Leave Print Action (A5 Landscape)
+        document.getElementById('btnLeavePrint').addEventListener('click', async () => {
+            if (!validateLeaveBeforeExport()) return;
+            try {
+                if (document.fonts && document.fonts.ready) {
+                    await document.fonts.ready;
+                }
+            } catch (e) {}
+            renderLeaveCanvas();
+            const canvas = document.getElementById('leaveExportCanvas');
+            const printImg = document.getElementById('printVoucherImg');
+            printImg.onload = () => {
+                window.print();
+            };
+            printImg.src = canvas.toDataURL('image/png');
+        });
+
+        // Leave Reset Action
+        document.getElementById('btnLeaveReset').addEventListener('click', () => {
+            const t = getTodayJalali();
+            leaveFullName.value = '';
+            leaveFullName.classList.remove('input-error');
+            leaveNameErrorMsg.style.display = 'none';
+            leaveJobTitle.value = '';
+            leaveHoursDuration.value = '';
+            leaveHourlyDate.value = t;
+            leaveFromTime.value = '';
+            leaveToTime.value = '';
+            leaveDaysDuration.value = '';
+            leaveFromDate.value = t;
+            leaveToDate.value = t;
+            leaveTypeRadios.forEach(r => { r.checked = (r.value === 'استحقاقی'); });
+            document.getElementById('lblTypeEstehghaghi').classList.add('selected-type');
+            document.getElementById('lblTypeEstelaji').classList.remove('selected-type');
+            document.getElementById('lblTypeBedooneHoghoogh').classList.remove('selected-type');
+            setLeaveMode('hourly');
+            try {
+                localStorage.removeItem('persian_leave_draft_v2');
+                localStorage.removeItem('persian_leave_draft_v1');
+            } catch (e) {}
+            showToast('📄 فرم برگه مرخصی جدید آماده شد.');
         });
 
         // PWA Install / Shortcut Modal
