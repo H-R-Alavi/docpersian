@@ -1225,7 +1225,7 @@
         <div class="card">
             <div class="actions-grid">
                 <button type="button" class="btn btn-download" id="btnLeaveDownload">
-                    <span>📥 دانلود عکس برگه درخواست</span>
+                    <span>📥 دانلود عکس</span>
                 </button>
                 <button type="button" class="btn btn-share" id="btnLeaveShare">
                     <span>📤 اشتراک‌گذاری برگه</span>
@@ -2736,37 +2736,48 @@
 
             // ROW 1: احتراما اینجانب ....................... به سمت ................... به مدت .......... روز / ساعت
             ctx.font = 'bold 31px ' + VOUCHER_FONT;
+            const lblIntro = 'احتراما اینجانب';
+            const lblRole = 'به سمت';
+            const lblDur = 'به مدت';
+            const unitWord = currentLeaveMode === 'hourly' ? 'ساعت' : 'روز';
+
+            const wIntro = ctx.measureText(lblIntro).width;
+            const wRole = ctx.measureText(lblRole).width;
+            const wDur = ctx.measureText(lblDur).width;
+            const wUnit = ctx.measureText(unitWord).width;
+
+            const gap = 12;
+            const totalRowW = rightX - leftX;
+            const availableSlotsW = Math.max(360, totalRowW - (wIntro + wRole + wDur + wUnit + gap * 6));
+
+            const nameSlotW = Math.round(availableSlotsW * 0.46);
+            const roleSlotW = Math.round(availableSlotsW * 0.34);
+            const durSlotW = availableSlotsW - nameSlotW - roleSlotW; // ~20% (~135px), guaranteed non-overlapping
+
             let curX = rightX;
 
-            const lblIntro = 'احتراما اینجانب ';
             ctx.fillText(lblIntro, curX, row1Y);
-            curX -= ctx.measureText(lblIntro).width + 6;
+            curX -= wIntro + gap;
 
-            const nameSlotW = 370;
             drawDottedSlot(ctx, curX, row1Y, nameSlotW, fullNameVal, false);
-            curX -= nameSlotW + 10;
+            curX -= nameSlotW + gap;
 
-            const lblRole = 'به سمت ';
             ctx.fillText(lblRole, curX, row1Y);
-            curX -= ctx.measureText(lblRole).width + 6;
+            curX -= wRole + gap;
 
-            const roleSlotW = 265;
             drawDottedSlot(ctx, curX, row1Y, roleSlotW, jobTitleVal, false);
-            curX -= roleSlotW + 10;
+            curX -= roleSlotW + gap;
 
-            const lblDur = 'به مدت ';
             ctx.fillText(lblDur, curX, row1Y);
-            curX -= ctx.measureText(lblDur).width + 6;
+            curX -= wDur + gap;
 
-            const unitWord = currentLeaveMode === 'hourly' ? 'ساعت' : 'روز';
-            const unitW = ctx.measureText(unitWord).width;
-            const durSlotW = Math.max(95, curX - (leftX + unitW + 12));
             const durVal = currentLeaveMode === 'hourly'
                 ? toPersianDigits(extractDigits(leaveHoursDuration.value))
                 : toPersianDigits(extractDigits(leaveDaysDuration.value));
             drawDottedSlot(ctx, curX, row1Y, durSlotW, durVal, false);
+            curX -= durSlotW + gap;
 
-            ctx.fillText(unitWord, leftX + unitW, row1Y);
+            ctx.fillText(unitWord, curX, row1Y);
 
             // ROW 2: Dynamic based on Hourly vs Daily mode
             ctx.font = 'bold 31px ' + VOUCHER_FONT;
